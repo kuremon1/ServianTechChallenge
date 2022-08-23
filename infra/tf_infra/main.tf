@@ -75,6 +75,14 @@ resource "azurerm_postgresql_database" "postgresdb" {
   collation           = "English_United States.1252"
 }
 
+resource "azurerm_postgresql_firewall_rule" "postgres_allowazureip" {
+  name                = "AllowAzureIP"
+  resource_group_name = azurerm_resource_group.stc_rg.name
+  server_name         = azurerm_postgresql_server.postgres_server.name
+  start_ip_address    = "0.0.0.0"
+  end_ip_address      = "0.0.0.0"
+}
+
 resource "azurerm_container_registry" "stc_acr" {
   name                = var.acrname
   resource_group_name = azurerm_resource_group.stc_rg.name
