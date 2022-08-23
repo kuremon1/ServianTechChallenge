@@ -9,10 +9,10 @@ $spnsecretid = Get-AzKeyVaultSecret -VaultName $vaultname -Name $spnsecret -AsPl
 az acr login --name $acrname --client-id $spnid --client-secret $spnsecretid --tenant-id $tenantid
 
 #Tag container images
-docker tag stctest/techchallengeapp:v2 $acrname.azurecr.io/servian/techchallengeapp:v1
+docker tag stctest/techchallengeapp:v2 $acrname.azurecr.io/stctest/techchallengeapp:v2
 
 #Push image to Azure Container Registry
-docker push $acrname.azurecr.io/servian/techchallengeapp:v1
+docker push $acrname.azurecr.io/stctest/techchallengeapp:v2
 az acr repository list --name $acrname.azurecr.io --output table
 
 
