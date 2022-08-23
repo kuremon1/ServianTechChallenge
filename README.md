@@ -1,11 +1,11 @@
 
 # Servian Tech Challenge
 
-This repository is for the Servian Tech Challenge Assessment.
+This repository has been made for the Servian Tech Challenge Assessment.
 
 https://github.com/servian/TechChallengeInstructions/blob/main/README.md
 
-  
+The code deploys an Azure Architecture to host a Web App linked to an Azure Managed PostgreSQL.
 
 # Deploying steps :
 
@@ -64,13 +64,17 @@ The pipeline will be based on Azure DevOps :
 
 ## 3- Build Servian Image and push to ACR
 
-Modify conf.toml file and push image to Azure Container Registry 
+Modify conf.toml file and push image to Azure Container Registry.
+
 **How to** : Set up the variables.json files and run the PushApptoACR Script.
 
 
 ## 4- Configure Web App and Azure Postgres using configure ConfigureWebApp script.
 
-This will setup connection string, persistent storage, environment variables and health check on Azure
+This will setup connection string, persistent storage, environment variables and health check on Azure.
+
+**How to** : Set up the variables.json files and run the configureWebAp.ps1 Script.
+
 
 ## 5- Test and validate :
 
@@ -78,6 +82,7 @@ The website should be available at the following URL : https://stctestcle.azurew
 
 There is currently an issue regarding the exposed ports, that I did not manage to fix in the allowed time.
 
+Container Logs :
 Initiating warmup request to container stctestcle_0_dd1743c2 for site stctestcle
 ERROR - Container stctestcle_0_dd1743c2 for site stctestcle has exited, failing site start
 ERROR - Container stctestcle_0_dd1743c2 didn't respond to HTTP pings on port: 8080, failing site start. Stopping site stctestcle because it failed during startup.
