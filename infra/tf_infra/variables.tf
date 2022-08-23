@@ -18,6 +18,11 @@ variable "admgrp" {
   type        = string
 }
 
+variable "connection_stringvalue" {
+  description = "Postgres connection string for web app"
+  type        = string
+}
+
 variable "admgrpid" {
   type        = string
 }

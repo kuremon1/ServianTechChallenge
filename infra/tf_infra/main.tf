@@ -119,8 +119,8 @@ resource "azurerm_app_service" "stc_app" {
   }
 
   connection_string {
-    name  = "Database"
-    type  = "SQLServer"
-    value = "Server=some-server.mydomain.com;Integrated Security=SSPI"
+    name  = "PostgresDB"
+    type  = "PostgresSQL"
+    value = var.connection_stringvalue
   }
 }
