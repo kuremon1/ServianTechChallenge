@@ -1,0 +1,12 @@
+{
+    "name" : "terraform_backend",
+    "backend_rg" : {
+      "rgname" : "servian_coreinfra",
+      "location" : "northeurope",
+      "backend_storage" : {
+        "storagename" : "serviantfbackend",
+        "sku" : "Standard_LRS",
+        "containername" : "serviantfbackend"
+    }
+  }
+}
