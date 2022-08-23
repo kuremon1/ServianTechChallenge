@@ -72,15 +72,23 @@ Modify conf.toml file and push image to Azure Container Registry
 
 This will setup connection string, persistent storage, environment variables and health check on Azure
 
-The parts 3 and 4 should be part of a CI/CD Pipeline.
- 
 ## 5- Test and validate :
 
-There is currently an issue regarding the exposed ports.
+The website should be available at the following URL : https://stctestcle.azurewebsites.net
+
+There is currently an issue regarding the exposed ports, that I did not manage to fix in the allowed time.
 
 Initiating warmup request to container stctestcle_0_dd1743c2 for site stctestcle
-
 ERROR - Container stctestcle_0_dd1743c2 for site stctestcle has exited, failing site start
-
 ERROR - Container stctestcle_0_dd1743c2 didn't respond to HTTP pings on port: 8080, failing site start. Stopping site stctestcle because it failed during startup.
+
+# Improvements to bring : 
+
+- The parts 3 and 4 should be part of a CI/CD Pipeline, to build, run and publish the new image to Azure container registry with a new tag.
+- Scripts should use try/catch to valide existing resources before trying to launch a command.
+- Tests should be implemented to validate pipelines (approval for terraform apply, run application on build, validate release deployment by querying health checks)
+- High availability and auto scaling is managed by Azure Web App and Azure managed Database.
+
+
+
 
